@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TUPC Online Appointment</title>
+<style>
+body{
+			display: flex;
+			background:radial-gradient(#ffffff,#ff0000);
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+			padding: 0;
+
+					}  
+		.laman{
+			max-width: 700px;
+			width: 100%;
+			background-color:#fff ;
+			padding: 10px 30px;
+			border-radius: 5px;
+			margin-top: 150px;
+			position: absolute;
+
+		}
+		.laman .title{
+			font-size: 25px;
+			font-weight: 500;
+		}
+		.laman .title::before{
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 3px;
+			width: 70px;
+			background: maroon;
+		}
+		.laman form .user-details{
+			display: inline-flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			margin: 20px 0 10px 0;
+		}
+		form .user-details .input-box{
+			margin-bottom: 10px;
+			width: calc(100%/2 - 20px);
+		}
+		.user-details .input-box .details{
+			display: block;
+			font-weight: 500;
+			margin-bottom: 5px;
+
+		}
+		.user-details .input-box input{
+			height: 20px;
+			width: 80%;
+			outline: none;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			padding-left: 15px;
+			font-size: 16px;
+			border-bottom-width: 2px;
+			transition: all 0.3s ease;
+		}
+		.user-details .input-box input:focus,
+		.user-details .input-box input:valid{
+			border-color: black;
+
+		}
+		
+		form .category{
+			display: flex;
+			width: 80%;
+			margin: 14px 0;
+			justify-content: space-between;
+		}
+		 .category label{
+			display: flex;
+			align-items: center;
+		}
+		.category-details .categorty .dot{
+			height: 18px;
+			width: 18px;
+			background: silver;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		form .button{
+			height: 45px;
+			margin: 35px 0;
+
+		}
+		form .button input{
+			height: 100%;
+			width: 100%;
+			outline: none;
+			color: gray;
+		}
+		.tagname{
+			background-color: rgb(255, 0, 0, 0.3);
+			width: 100%;
+			padding: 10px 770px 10px 5px;*/
+			position: fixed;
+			margin-top: -500px;
+			right: 0px;
+			
+		}
+</style>
+</head>
+<body>
+	<div class="tagname">
+		<h1>Technological University of the Philippines</h1>
+		<h3>Online Appointment</h3>
+	</div>
+<div class="laman">
+	<div class="title">INFORMATION</div>
+	 <form action="#">
+    <div class="user-details">
+        <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text"  required>
+        </div>	
+        	
+       <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" required>
+        </div>
+         <div class="Category">
+            <span class="gtitle">Category</span><br>
+            <input type="radio" id="Student" name="fav_language" value="Student">
+            <label for="html">Student</label>
+            <input type="radio" id="Applicant" name="fav_language" value="Applicant">
+  <label for="css">Applicant</label>
+  <input type="radio" id="Faculty" name="fav_language" value="Faculty">
+  <label for="javascript">Faculty</label>
+  <input type="radio" id="Visitor" name="fav_language" value="Visitor">
+  <label for="javascript">Visitor</label>
+       </div>
+        
+        <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" required>
+        </div>
+       	
+
+        <div class="input-box">
+            <span class="details">ID# (for student only)</span>
+            <input type="text"  required>
+        </div> 
+        <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" required>
+        </div>
+        <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" required>
+        </div>
+        <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" required>
+        </div>
+
+    </div>
+    <div class="button">
+    	<input type="submit" value="Save">
+    	<a href={%url '1sthtml' %}></a>
+    </div>
+  </form>
+</div>
+ <body>
+</html>

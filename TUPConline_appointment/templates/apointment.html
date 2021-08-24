@@ -1,0 +1,91 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TUPC Online Appointment</title>
+	<style >
+		body{
+			margin: 0;
+			padding: 0;
+			background:radial-gradient(#ffffff,#ff0000);
+			height: 120vh;
+			width: 100vh;
+			overflow: scroll;
+		}  
+		.tagname{
+			background-color: rgb(255, 0, 0, 0.3);
+			width: 100%;
+			padding: 10px 770px 10px 5px;*/
+			position: fixed;
+			top: 0px;
+			right: 0px;
+
+		}
+		.center{
+			width: 300px;
+            background: white;
+            border-radius: 10px;
+            position :relative;
+            left:500px;
+            top: 20px;
+            padding: 5px 50px 15px 20px;
+            font-size: 18px;
+		}
+		.btn{
+            position:relative;
+            transition: .5s ease;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            padding: 8px 20px;
+            margin: 10px 60px 5px 60px;
+        }
+        .sub{
+        	font-size: 20px;
+        	margin-left: -15px;
+        }
+        .note{
+  			padding: 10px;}
+  			.buttonapp {
+  background-color: gray;
+  border: 5px;
+  color: white;
+  padding: 15px 10px;
+ 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 20px 30px;
+  left: 0px;
+}
+	</style>
+</head>
+<body>
+<div class="tagname">
+		<h1>Technological University of the Philippines</h1>
+		<h3>Online Appointment</h3>
+</div>
+<span ><a  class="buttonapp" href="{% url 'logout' %}">Logout</a></span>
+<div class="center">
+
+		<h2 class="sub">Make an Appointment</h2>
+		<form action="" method="POST">
+			{% csrf_token %}
+				{{form|crispy}}	
+			<button type="submit" class="btn">Submit</button>
+		</form>
+		
+</div>
+
+<div class="note">
+<h4>MAHALAGANG PAALALA</h4>
+  <ul>
+  <li>Para po sa mga <b>Faculty</b> ipakita lamang po ang inyong TUPC ID</li>
+  <li>Para po sa mga <b>Alumnus</b> o <b>Applicant</b> , magdala po ng isang(1) VALID ID at ipakita ito sa Guard</li>
+  <li>Para po sa mga <b>Student</b> ng University ipakita ang TUPC ID <i>(kung ikaw ay freshmen at wala pang ID ipakita ang COR at magdala ng VALID ID)</i></li>
+</ul>
+</div>
+
+</body>
+</html>

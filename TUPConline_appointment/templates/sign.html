@@ -1,0 +1,154 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TUPC Online Appointment</title>
+<style>
+    .tagname{
+            background-color: rgb(255, 0, 0, 0.3);
+            width: 100%;
+            
+            position: fixed;
+            top: 0px;
+            right: 0px;
+
+        }
+    
+        body{
+            margin: 0;
+            padding: 0;
+            background:radial-gradient(#ffffff,#ff0000);
+            height: 100vh;
+            overflow: hidden;
+        }       
+        .laman{
+            width: 200px;
+            background: white;
+            border-radius: 10px;
+            position :relative;
+            left:500px;
+            top: 150px;
+            padding: 5px 40px 15px 30px;
+            font-size: 15px;
+        }            
+        .btn{
+            position:relative;
+            transition: .5s ease;
+            background-color: #f44336;
+            color: white;
+            border-radius: 5px;
+            padding: 8px 20px;
+            margin: 10px 60px 5px 60px;
+        }
+        .reg{
+            font-size: 20px;
+        }
+</style>
+</head>
+<body>
+    <div class="tagname">
+	   <h1>Technological University of the Philippines</h1>
+	   <h3>Online Appointment</h3>
+    </div>
+<div class="laman">
+    <div class="reg">
+	<h3 style="margin-left: -25px;">Registration</h3></div>
+	<form action="" method="POST">
+	{% csrf_token %}
+	{{form|crispy}}	
+    	
+	<a href="{%url 'home' %}"><button type="submit" class="btn">Submit</button></a>
+   
+    </div>
+  </form>
+</div>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="fullname"  required>
+        </div>  
+            
+       <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" required>
+        </div>
+       <div class="input-box">
+            <span class="details">Category</span>
+            <input type="text"  id="category" 
+            placeholder="student/applicant/faculty.alumnus" 
+            required>
+            
+       </div>
+       <div class="category-details">
+        <input type="radio" name="category" id="dot-1">
+        <input type="radio" name="category" id="dot-2">
+        <input type="radio" name="category" id="dot-3">
+        <input type="radio" name="category" id="dot-4">
+        <span class="category-title">Category</span>
+        <div class="category">
+            <label for="dot-1">
+                <span class="dot one"></span>
+                <span class="visitor">Student</span>
+            </label>
+            <label for="dot-2">
+                <span class="dot one"></span>
+                <span class="visitor">Faculty</span>
+            </label>
+            <label for="dot-3">
+                <span class="dot one"></span>
+                <span class="visitor">Applicant</span>
+            </label>
+            <label for="dot-4">
+                <span class="dot one"></span>
+                <span class="visitor">Alumnus</span>
+            </label>
+        </div>
+        
+       </div>
+        
+        <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" required>
+        </div>
+        
+
+        <div class="input-box">
+            <span class="details">ID# (for student only)</span>
+            <input type="number" id="idnum" >
+        </div> 
+        <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password"  required>
+        </div>
+        <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" required>
+        </div>
+        <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" id="phonenum" required>
+        </div>
+
+    </div>-->

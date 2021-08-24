@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>TUPC Online Appointment</title>
+	<style>
+	/*tagname*/
+		.tagname{
+			background-color: rgb(255, 0, 0, 0.3);
+			
+			width: 100%;
+			padding: 10px 770px 10px 5px;*/
+			position: fixed;
+			top: 0px;
+			right: 0px;
+
+		}
+	
+		body{
+			margin: 0;
+			padding: 0;
+			background:radial-gradient(#ffffff,#ff0000);
+			height: 100vh;
+			overflow: hidden;
+		}  
+
+
+		
+		.center{
+			margin-top: 30px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 400px;
+			background: white;
+			border-radius: 10px;
+		}
+		
+		.sign{
+			margin: 30px 0;
+			text-align: center;
+			font-size: 16px;
+			color: #666666;
+		}
+		.sign a{
+			color: #2691d9;
+			text-decoration: none;
+
+		}
+		.sign a:hover{
+			text-decoration: underline;
+		}
+		.buttonapp {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 30px;
+}
+	</style>
+</head>
+<body>
+	<div class="tagname">
+		<h1>Technological University of the Philippines</h1>
+		<h3>Online Appointment</h3>
+	</div>
+	
+	<div class="center">
+		
+		<form method="post">
+			{% csrf_token %}
+			 <div class="sign">
+			 	{% if request.user.is_staff %}
+			 	<h2>Welcome<a href="{% url 'dhome' %}"> Admin</a></h2>
+			 	{% endif %}
+			 	
+			 	<h2>Welcome<a href="{% url 'home' %}">Visitor</a></h2>
+			 	<a class="buttonapp" href="{% url 'logout' %}">Logout</a>
+
+			 </div>
+		</form>
+	</div>
+	
+</body>

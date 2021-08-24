@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+	<title>TUPC Online Appointment</title>
+	<style >
+		body{
+			margin: 0;
+			padding: 0;
+			background:radial-gradient(#ffffff,#ff0000);
+			height: 100vh;
+			overflow: scroll;
+		}  
+		.tagname{
+			background-color: rgb(255, 0, 0, 0.3);
+			
+			width: 100%;
+			padding: 10px 770px 10px 5px;*/
+			position: fixed;
+			top: 0px;
+			right: 0px;
+
+		}
+		      .table{
+        margin-top: 30px;
+        margin-right: 15px;
+        margin-left: 15px;
+        background-color: white;
+        padding: 10px;
+      }
+      table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table,td, th {
+  border: 2px solid black;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #dddddd;
+}
+.box{
+	padding: 10px 15px;
+	display: inline;
+	width: 100px;
+}
+.main{
+	margin-top: 20px;
+  }
+</style>
+
+<body>
+<div class="tagname">
+		<h1>Technological University of the Philippines</h1>
+		<h3>Online Appointment</h3>
+	</div>
+	<span ><a  class="" href="{% url 'logout' %}">Logout</a></span>
+	<div class="table">
+<h3>ANNOUNCEMENT</h3>
+
+<form action="" method="POST">
+<table>
+	{% csrf_token %}
+  <thead>
+    <tr>
+    	<th>date</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Purpose</th>
+      <th>Vist Date</th>
+      <th>Department</th>		
+      <th>Status</th>	
+
+    </tr>
+  </thead>
+  <tbody>
+      {% for dhome in dhome %}
+    <tr>
+    	<td>{{ dhome.created_at }}</td>
+      <td>{{ dhome.fullname }}</td>
+      <td>{{ dhome.category }}</td>
+      <td>{{ dhome.purpose }}</td>
+      <td>{{ dhome.date }}</td>
+      <td>{{ dhome.dept }}</td>
+      <td>{{dhome.status}}</td>
+      <td><a href="{% url 'update' dhome.id %}">Edit</td>
+      
+      <!--<td>{{form}}</td>-->
+{% endfor %}
+ 
+  </tr>
+  </tbody>
+</table>
+</form>
+</div>
+<div class="main">
+	<h3 class="box">Total Accepted = {{accept}}</h3>	
+		<h3 class="box">Total Denied = {{deny}}</h3>
+		<h3 class="box">Total pending = {{pending}}</h3>
+
+</body>
+</html>
